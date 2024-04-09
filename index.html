@@ -1,18 +1,459 @@
 ---
 layout: default
 ---
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="ChatMusician">
+	<meta name="keywords" content="GPT-4, open-source, vision-language">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ChatMusician</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- The following needs to be inserted somewhere on the page for the player(s) to work. -->
+	<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/bulma-quickview/dist/js/bulma-quickview.min.js"></script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.qhDXWpKopYk.L.W.O/am=wA/d=0/rs=AN8SPfq5gedF4FIOWZgYyMCNZA5tU966ig/m=el_main_css">
+<style>
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		text-align: center;
+	}
+	th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: center;
+	}
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+</head>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<article class="post">
+  <h1 style="text-align: center" class="title is-1 publication-title">MUPT:</h1>
+  <h2 style="text-align: center" class="title is-2 publication-title">Symbolic Music Generative Pre-trained Transformer</h2>
+  <section class="section">
+		<div class="container ">
+			<!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 style="text-align: center" class="title is-3">Abstract</h2>
+					<div class="content has-text-justified">
+						<p>SMuPT is a series of pre-trained models for symbolic music generation. It was trained on a large-scale dataset of symbolic music, including millions of monophonic and polyphonic pieces from different genres and styles. The models are trained with the LLama2 architecture, and can be further used for downstream music generation tasks such as melody generation, accompaniment generation, and multi-track music generation.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="is-divider"></div>
+	</section>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+	
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+	<section class="section">
+		<div class="container ">
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 style="text-align: center" class="title is-3">SMS Law</h2>
+					<div class="content has-text-justified">
+						<p>we extend the original discrete formulation to accommodate continuous variables, allowing for a more nuanced understanding of data constraints in varied contexts. The results indicate a promising direction for future research in music generation, offering extensive resources for community-led research through our open-source contributions.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="is-divider"></div>
+	</section>
+	
+
+	<h2 style="text-align: center" class="title is-3">MuPT Model Checkpoints HF-Link</h2>
+	<section class="section">
+		<div class="container ">
+			<table>
+			<tr>
+				<th>Model</th>
+				<th>190M</th>
+				<th>550M</th>
+				<th>1.07B</th>
+				<th>1.97B</th>
+			</tr>
+			<tr>
+				<td>MuPT-v0-4096</td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-4096-190M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-4096-550M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-4096-1.07B">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-4096-1.97B">Link</a></td>
+			</tr>
+			<tr>
+				<td>MuPT-v0-8192</td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-8192-190M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-8192-550M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-8192-1.07BM">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v0-8192-1.97B">Link</a></td>
+			</tr>
+			<tr>
+				<td>MuPT-v1-8192</td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v1-8192-190M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v1-8192-550M">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v1-8192-1.07B">Link</a></td>
+				<td><a href="https://huggingface.co/m-a-p/MuPT-v1-8192-1.97B">Link</a></td>
+			</tr>
+			<tr>
+				<td>MuPT-v1-8192-1.3B-intermediate-ckpts</td>
+				<td colspan="4"><a href="https://huggingface.co/m-a-p/MuPT-intermediate-ckpts">Link</a></td>
+			</tr>
+			</table>
+		</div>
+		<div class="is-divider"></div>
+	</section>
+	
+
+  <div class="container">
+		<div class="container has-text-centered">
+			<h2 class="title">Examples</h2>
+		</div>
+		<section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 1</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_20_test_105.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 2</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_20_test_113.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 3</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_24_test_1.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 4</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_24_test_28.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 5</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_24_test_34.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 6</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_24_test_53.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 7</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_28_test_143.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 8</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_28_test_157.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 9</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_28_test_168.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 10</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_28_test_197.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 11</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_109.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 12</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_11.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 13</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_130.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 14</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_17.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 15</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_185.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 16</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_19.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 17</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_46.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 18</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_66.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 19</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_82.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="section">
+			<div class="contrainer">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-10">
+						<h2 class="title is-4">example 20</h2>
+						<div class="container  content has-text-centered">
+								<div style="text-align: center;">
+									<audio controls>
+                    <source src="../music/mupt_last_test_89.mp3" type="audio/mp3">
+                  </audio>
+								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    
+	</div>
+</article>
